@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاتورة الشراء والبيع</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>شركة الأطيبان لتمور الوادي</h1>
+        <div class="clock" id="clock"></div>
+        <div class="date" id="date"></div>
+        
+        <form id="invoice-form">
+            <label for="product-name">اسم الصنف:</label>
+            <input type="text" id="product-name" required>
+
+            <label for="product-code">كود الصنف:</label>
+            <input type="text" id="product-code" required>
+
+            <label for="product-type">نوع الصنف:</label>
+            <input type="text" id="product-type" required>
+
+            <label for="quantity">الكمية:</label>
+            <input type="number" id="quantity" required>
+
+            <label for="unit-type">نوع الكمية:</label>
+            <select id="unit-type">
+                <option value="علبة">علبة</option>
+                <option value="كيلو">كيلو</option>
+            </select>
+
+            <label for="price">سعر الوحدة:</label>
+            <input type="number" id="price" required>
+
+            <button type="button" onclick="addItem()">إضافة</button>
+            <button type="button" onclick="editItem()">تعديل</button>
+            <button type="button" onclick="deleteItem()">حذف</button>
+            <button type="button" onclick="saveInvoice()">حفظ</button>
+            <button type="button" onclick="printInvoice()">طباعة</button>
+        </form>
+
+        <table id="invoice-table">
+            <thead>
+                <tr>
+                    <th>اسم الصنف</th>
+                    <th>كود الصنف</th>
+                    <th>نوع الصنف</th>
+                    <th>الكمية</th>
+                    <th>نوع الكمية</th>
+                    <th>سعر الوحدة</th>
+                    <th>الإجمالي</th>
+                </tr>
+            </thead>
+            <tbody id="invoice-body">
+                <!-- سيتم إضافة العناصر هنا -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+           
